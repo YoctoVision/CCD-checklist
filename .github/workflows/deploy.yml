@@ -19,11 +19,29 @@ jobs:
 
       - name: Build GitBook with Docker
         run: |
-          # 使用一个稳定、已知可用的GitBook Docker镜像
-          # 这个镜像已经预装好了GitBook 3.2.3和所有依赖
           docker run --rm -v "$PWD":/book -w /book billryan/gitbook gitbook install
           docker run --rm -v "$PWD":/book -w /book billryan/gitbook gitbook build
-          # 构建完成后，_book 目录会自动出现在当前目录
+
+      # ********** 新增的关键步骤 **********
+      - name: 向所有页面注入Cusdis评论代码
+        run: |
+          # 进入构建输出目录
+          cd _book
+          # 使用 sed 命令，在所有 .html 文件的 </body> 标签前插入固定的Cusdis代码
+          # 请将 YOUR_APP_ID 替换为您Cusdis后台的真实 ID
+          find . -name "*.html" -type f -exec sed -i '/<\/body>/i\
+          <!-- 以下为Cusdis评论框，由构建脚本自动注入 -->\
+          <div id="cusdis_thread"\
+            data-host="https://cusdis.com"\
+            data-app-id="24a2671a-d7a9-4a16-8c77-a5126f9cfb10"\
+            data-page-id="{{ PAGE_ID }}"\
+            data-page-url="{{ PAGE_URL }}"\
+            data-page-title="{{ PAGE_TITLE }}"\
+          ></div>\
+          <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>\
+          ' {} \;
+          echo "评论代码已注入所有HTML文件。"
+      # ***********************************
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
