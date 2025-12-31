@@ -1,0 +1,25 @@
+{
+  "name": "checklist-gitbook",
+  "version": "1.0.0",
+  "description": "GitBook 项目",
+  "main": "index.js",
+  "scripts": {
+    "build": "gitbook build",
+    "serve": "gitbook serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "gitbook"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "gitbook-plugin-gitalk": "^1.0.0"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
+}

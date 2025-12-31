@@ -1,0 +1,27 @@
+{
+  "language": "zh-hans",
+  "structure": {
+    "readme": "README.md"
+  },
+  "plugins": [
+    "-lunr",
+    "-sharing",
+    "-search",
+    "search-pro",
+    "sidebar-style",
+    "code",
+    "splitter",
+    "expandable-chapters",
+    "-highlight"
+  ],
+  "pluginsConfig": {
+    "sidebar-style": {
+      "title": "Yocto Checklist",
+      "description": "项目文档",
+      "author": "Yocto团队"
+    }
+  },
+  "scripts": {
+    "files": ["./cusdis_loader.js"]
+  }
+}

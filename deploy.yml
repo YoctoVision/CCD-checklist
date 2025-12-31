@@ -1,0 +1,50 @@
+name: Deploy GitBook to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install GitBook
+        run: |
+          npm install -g gitbook-cli
+          gitbook --version
+      
+      - name: Install Dependencies
+        run: |
+          # 如果您有package.json，运行 npm install
+          [ -f package.json ] && npm install
+          # 安装GitBook插件
+          gitbook install
+      
+      - name: Build GitBook
+        run: gitbook build
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_book'
+      
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
