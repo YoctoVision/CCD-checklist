@@ -14,37 +14,33 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '16'  # 关键修改：从 18 改为 16
           cache: 'npm'
-      
+
       - name: Install GitBook
         run: |
           npm install -g gitbook-cli
           gitbook --version
-      
-      - name: Install Dependencies
-        run: |
-          # 如果您有package.json，运行 npm install
-          [ -f package.json ] && npm install
-          # 安装GitBook插件
-          gitbook install
-      
-      - name: Build GitBook
+
+      - name: Install Plugins
+        run: gitbook install
+
+      - name: Build GitBook Site
         run: gitbook build
-      
-      - name: Setup Pages
+
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
-      
-      - name: Upload artifact
+
+      - name: Upload Static Files
         uses: actions/upload-pages-artifact@v3
         with:
           path: './_book'
-      
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
