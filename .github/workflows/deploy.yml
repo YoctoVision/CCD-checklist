@@ -17,22 +17,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '16'  # 关键修改：从 18 改为 16
-          cache: 'npm'
-
-      - name: Install GitBook
+      - name: Build GitBook with Docker
         run: |
-          npm install -g gitbook-cli
-          gitbook --version
-
-      - name: Install Plugins
-        run: gitbook install
-
-      - name: Build GitBook Site
-        run: gitbook build
+          # 使用一个稳定、已知可用的GitBook Docker镜像
+          # 这个镜像已经预装好了GitBook 3.2.3和所有依赖
+          docker run --rm -v "$PWD":/book -w /book billryan/gitbook gitbook install
+          docker run --rm -v "$PWD":/book -w /book billryan/gitbook gitbook build
+          # 构建完成后，_book 目录会自动出现在当前目录
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
