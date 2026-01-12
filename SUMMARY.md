@@ -7,3 +7,4 @@
     * [MVviewers无图像](CCD/mv_no_image.md)
     * [调度适配问题](CCD/schedule.md)
     * [调试相关问题](CCD/debug.md)
+* [YoctoVisionAI 1.2](CCDsoftware.md)
