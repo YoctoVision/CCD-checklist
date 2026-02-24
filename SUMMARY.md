@@ -8,3 +8,4 @@
     * [调度适配问题](CCD/schedule.md)
     * [调试相关问题](CCD/debug.md)
 * [YoctoVisionAI 1.2](CCDsoftware.md)
+* [软件重装步骤](Reinstall.md)
