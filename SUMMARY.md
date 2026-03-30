@@ -10,4 +10,4 @@
 * [YoctoVisionAI 1.2](CCDsoftware.md)
 * [软件重装步骤](Reinstall.md)
 * [图像时间戳异常排查](timestamp.md)
-* [产品咨询工单管理](zoho.md)
+* [工单管理](zoho.md)
