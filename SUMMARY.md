@@ -9,5 +9,6 @@
     * [调试相关问题](CCD/debug.md)
 * [YoctoVisionAI 1.2](CCDsoftware.md)
 * [软件重装步骤](Reinstall.md)
+* [重装系统后软锁变更](Relock.md)
 * [图像时间戳异常排查](timestamp.md)
 * [工单管理](zoho.md)
