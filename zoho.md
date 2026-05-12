@@ -2,11 +2,11 @@
 
 ## 1. 简介
 
-本文档为客户提供使用 `https://bozhiinnovation.zohodesk.com/portal/` 提交产品咨询工单的详细指南。无需登录，只需填写表单并提交，系统会通过邮箱向您发送工单回执。
+本文档为客户提供使用 [https://bozhiinnovation.zohodesk.com/portal/](https://bozhiinnovation.zohodesk.com/portal/) 提交产品咨询工单的详细指南。无需登录，只需填写表单并提交，系统会通过邮箱向您发送工单回执。
 
 ## 2. 访问工单提交页面
 
-1. 打开浏览器，输入网址：`https://bozhiinnovation.zohodesk.com/portal/`
+1. 打开浏览器，输入网址：[https://bozhiinnovation.zohodesk.com/portal/](https://bozhiinnovation.zohodesk.com/portal/)
 2. 进入 Yocto 团队的工单管理系统门户页面
    ![alt text](image.png)
 3. 将界面拉到最底部，点击「提交一个工单」按钮
@@ -77,7 +77,7 @@
 
 ### 5.1 注册步骤
 
-**1. 进入 Yocto 团队的工单管理系统门户页面：** `https://bozhiinnovation.zohodesk.com/portal/`
+**1. 进入 Yocto 团队的工单管理系统门户页面：** [https://bozhiinnovation.zohodesk.com/portal/](https://bozhiinnovation.zohodesk.com/portal/)
 
 **2. 点击右上角「注册」按钮**
    ![alt text](image-6.png)

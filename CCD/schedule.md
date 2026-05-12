@@ -50,17 +50,8 @@ http://{ip}:{port}/CaptureImage/{group}
 
 ![MES 设置界面图](./images/mes-setting.jpg)
 
-## 4. 拍照超时警告问题
 
-### 现场问题
-CCD 间隔一段时间就会提示警告 "buffer timeout or unavailable"，调度反映为一直无法拿到拍照结果，并且一直显示等待拍照完成。
-
-### 解决方法
-运行程序时，`camera_trigger_interval_ms` 这一项为 100 时，会为了提升识别率消耗些许性能。目前的 CCD 识别率已经打标的情况下，建议将 `D:/yocto/vsentry/vsentry.json` 文件中的 `camera_trigger_interval_ms` 参数设置为 0。
-
-![buffer timeout 设置图](./images/buffer_timeout.jpg)
-
-## 5. 路由配置问题
+## 4. 路由配置问题
 
 ### 现场问题
 
@@ -96,7 +87,7 @@ route add 192.168.0.0 mask 255.255.0.0 192.168.1.254 -p
 | `192.168.1.254` | **网关地址**：数据包转发的下一跳地址，通常是路由器或三层交换机的接口 IP |
 | `-p` | **永久保存**：添加此参数后，路由规则持久化保存，系统重启后仍然有效 |
 
-## 6. 其他现场问题说明
+## 5. 其他现场问题说明
 
 1. 调度访问 `http://{ip}:{port}/CaptureImage/{group}` 时，需注意 **CaptureImage 的 I 是大写的 i，不是小写的 L**，I 输入错误将导致 404 错误
 

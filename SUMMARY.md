@@ -8,6 +8,7 @@
     * [调度适配问题](CCD/schedule.md)
     * [调试相关问题](CCD/debug.md)
     * [相机其他问题](CCD/camera_other.md)
+    * [拍照超时警告问题](CCD/buffer_timeout.md)
 * [YoctoVisionAI 1.2](CCDsoftware.md)
 * [软件重装步骤](Reinstall.md)
 * [重装系统后软锁变更](Relock.md)
